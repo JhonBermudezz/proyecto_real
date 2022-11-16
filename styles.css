@@ -1,0 +1,836 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+/*Barra de navegacion*/
+
+.main-nav{
+    font-size: 17px;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 60px;
+    padding: 25px 0;
+}
+
+.nav-logo{
+    width: 60px;
+}
+.main-nav ul{
+    display: flex;
+}
+.main-nav ul li{
+    padding: 10px;
+}
+.main-nav ul li a{
+    padding: 6px;
+}
+.main-nav ul li a:hover{
+    border-bottom:2px solid blue;
+}
+
+.main-nav ul.nav-menu{
+    flex:1;
+    margin-left: 20px;
+}
+
+/*Header page*/
+.main-image{
+    margin-top: 20px;
+    width: 100%;
+    height: 550px;
+    background: url('./assets/img/image-main.webp')center;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;  
+    border-radius: 5px;
+}
+
+.header-img-main{
+    color:rgb(0, 0, 0);
+    display: block;
+    text-align: center;
+    padding: 2px;
+}
+/*History section*/
+.img-history{
+    margin-top: 50px;
+    background: url(./assets/img/historia-real-img.jpg);
+    background-position: center center;
+    background-size: cover;
+    width: 600px;
+    height: 600px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 20px black;
+    border-radius: 2px;
+}
+#historia .historia-text{
+    color: black;
+    text-align: initial;
+    width: 50%;
+    max-width: 600px;
+    padding: 0px 30px;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    font-size: 17px;
+}
+#historia .container-historia{
+    display: flex;
+    justify-content: center;
+    padding: 70px 12px;
+}
+#historia .container-historia h2{
+    margin-bottom: 20px;
+}
+.historia-text p{
+    margin-bottom: 20px;
+}
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #fff;
+    width: 125px;
+}
+.btn:hover{
+    opacity: .4;
+}
+/*Section Goleadores*/
+.animacion-goleadores{
+    display: flex;
+    justify-content: center;
+    padding: 70px 12px;
+}
+.tittle-goleadores{
+    font-size: 40px;
+    display: block;
+    font-family:'Roboto', sans-serif;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 10ch;
+    animation: typing 5s steps(10),
+    blink .5s infinite step-end alternate;
+    overflow: hidden;
+    text-align: center;
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+}
+@keyframes blink{
+    50%{ border-color: transparent;}
+}
+#goleadores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+#goleadores .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 70px 12px;*/
+}
+
+.cards{
+    margin: 20px;
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    background: var(--i);
+    background-size: cover;
+    box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);
+}
+
+.content-goleadores{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background:rgba(0,0,0,.4);
+    opacity: 0;
+    transition: .5s;
+}
+
+.content-goleadores{
+    color:rgba(255,255,255,.8);
+    text-align: center;
+    margin: 10px 0;
+}
+
+.cards:hover .content-goleadores{
+    opacity:1;
+    border-radius: 5px;
+}
+
+#goleadores .content-goleadores p{
+    margin-left: 10px;
+    margin-bottom: 15px;
+    padding: 2px;
+}
+
+/*Estadio*/
+.banner-one {
+    width: 100%;
+    height: 600px;
+    background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+    url(./assets/img/estadio.jpg)no-repeat center center/cover;
+    margin-bottom: 40px;
+}
+
+.banner-one .content-estadio {
+    width: 40%;
+    padding: 315px 0 0 30px;
+    color:white;
+}
+  
+.banner-one p{
+    margin: 10px 0 20px 0;
+}
+#estadio{
+    padding: 70px 12px;
+}
+/*Fichajes*/
+.title-fichajes{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+
+#fichajes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+#fichajes .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 70px 12px;*/
+    margin: 20px;
+    width: 500px;
+    height: 700px;
+    border-radius: 5px;
+    background: var(--i);
+    background-size: cover;
+    box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);
+}
+
+/*Slider*/
+.testimony{
+    background-color: rgb(231, 231, 231);
+    padding: 50px;
+    margin-bottom: 70px;
+}
+
+.testimony__container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+.testimony__body{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.testimony__body--show{
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.testimony__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.testimony__texts{
+    max-width: 700px;
+}
+
+.testimony__course{
+    background-color: rgb(48, 48, 175);
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+}
+
+.testimony__arrow{
+    width: 90%;
+    cursor: pointer;
+}
+
+/*fOOTER*/
+.footer-links {
+    background: #000000;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 35px 0;
+}
+  
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+}
+  
+.footer-container ul {
+    margin: 0 auto;
+}
+  
+.footer-links li {
+    line-height: 2.8;
+}
+  
+.footer {
+    background: #000000;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 20px;
+}
+
+.footer-links a{
+    color: #ffffff;
+}
+
+/*Goleadores en resolución menor a 1075*/
+@media only screen and (max-width:1075px)
+{
+    #goleadores{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 100px;
+    }
+    
+    .cards{
+        margin: 20px;
+        width: 500px;
+        height: 500px;
+        border-radius: 5px;
+        background: var(--i);
+        background-size: cover;
+        box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);
+    }
+}
+
+/*Goleadores en resolución menor a 600*/
+@media only screen and (max-width:600px)
+{
+    .cards{
+        margin: 20px;
+        width: 300px;
+        height: 500px;
+        border-radius: 5px;
+        background: var(--i);
+        background-size: cover;
+        box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);
+    }
+}
+
+/*Menu principal a resolución menor de 760*/
+@media only screen and (max-width:760px)
+{
+    .main-nav{
+        font-size: 17px;
+        display:flex;
+        justify-content:space-between;
+        flex-direction: column;
+        align-items: center;
+        height: 60px;
+        padding: 25px 0;
+    }
+
+    .main-nav ul{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .main-nav ul li a{
+        padding: 6px;
+        color:#fff;
+    }
+    
+    .main-nav ul li a:hover{
+        border-bottom:2px solid rgb(73, 73, 77);
+    }
+    
+    .main-nav ul.nav-menu{
+        background-color: #000000;
+        opacity: 0.9;
+        text-align: center;
+        border-radius: 5px;
+        flex:1;
+        margin-left: 20px;
+        position: relative;
+        top:225px;
+    }
+}
+
+/*Imagen de menu principal a resolución menor de 456*/
+@media only screen and (max-width:456px)
+{
+    .main-image{
+        margin-top: 20px;
+        width: 100%;
+        height: 550px;
+        background: url('./assets/img/image-main.webp')center;
+        padding-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:flex-start;  
+        border-radius: 0px;
+    }
+}
+
+/*Historia adaptada a resolución menor de 1000*/
+@media only screen and (max-width:1000px)
+{
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 450px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+
+    #historia .historia-text{
+        color: black;
+        text-align: initial;
+        width: 100%;
+        max-width: 600px;
+        padding: 0px 30px;
+        display: block;
+        font-size: 17px;
+    }
+}
+
+/*Menor de 611*/
+@media only screen and (max-width:611px)
+{
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 500px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 550*/
+@media only screen and (max-width:550px)
+{
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 550px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 637*/
+@media only screen and (max-width:537px)
+{
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 550px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 529*/
+@media only screen and (max-width:529px)
+{
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 550px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 494*/
+@media only screen and (max-width:494px)
+{
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 600px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 462*/
+@media only screen and (max-width:462px)
+{
+    /*Historia*/
+
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 650px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 452*/
+@media only screen and (max-width:452px)
+{
+    /*Historia*/
+
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 600px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 516*/
+@media only screen and (max-width:416px)
+{
+    /*Historia*/
+
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 650px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 402*/
+@media only screen and (max-width:402px)
+{
+    /*Historia*/
+
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 650px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 377*/
+@media only screen and (max-width:377px)
+{
+    /*Historia*/
+
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 700px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Menor de 354*/
+@media only screen and (max-width:354px)
+{
+    /*Historia*/
+
+    .img-history{
+        position: absolute;
+        top:675px;
+        left:0px;
+        margin-top: 50px;
+        background: url(./assets/img/historia-real-img.jpg);
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 750px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        opacity: .2;
+        z-index: -100;
+    }
+}
+
+/*Estadio en resolución menor a 901*/
+@media only screen and (max-width:901px)
+{
+    .banner-one .content-estadio {
+        width: 40%;
+        padding: 30px 0 0 30px;
+        color:white;
+    }
+}
+
+/*Menor a 752*/
+@media only screen and (max-width:752px)
+{
+    .banner-one .content-estadio {
+        width: 90%;
+        padding: 30px 0 0 30px;
+        color:white;
+    }
+}
+
+/*Fichajes en resolución menor a 1075*/
+@media only screen and (max-width:1075px)
+{
+    #fichajes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
+}
+
+/*Fichajes en resolución menor a 600*/
+@media only screen and (max-width:600px)
+{
+    #fichajes .cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        width: 300px;
+        height: 500px;
+        border-radius: 5px;
+        background: var(--i);
+        background-size: cover;
+        box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);
+    }
+}
+
+/*Champions del real (>:V) en resolución menor a 990*/
+@media only screen and (max-width:990px)
+{
+    .testimony{
+        background-color: rgb(231, 231, 231);
+        padding: 0px;
+        margin-bottom: 70px;
+    }    
+}
+
+/*Menor a 768*/
+@media only screen and (max-width:768px)
+{
+    .testimony-body
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+    }
+
+    .testimony-picture
+    {
+        grid-row:1/2;
+    }
+
+    .testimony__img
+    {
+        width: 210px;
+        height: 210px;
+    }
+}
+
+/*Menor a 735*/
+@media only screen and (max-width:735px)
+{
+    .testimony__img
+    {
+        display: none;
+    }
+}
+
+/*Menor a 456*/
+@media only screen and (max-width:456px)
+{
+    .testimony__arrow{
+        align-self: center;
+        margin-top: 15px;;
+    }
+
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+}
