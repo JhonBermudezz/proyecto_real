@@ -68,6 +68,26 @@ ul{
     margin-left: 20px;
 }
 
+/* Social Icons Navigation */
+.main-nav ul.nav-social {
+    /* Aligns to the right because .nav-menu has flex:1 and main-nav has justify-content: space-between */
+}
+
+.main-nav ul.nav-social li {
+    display: inline-block;
+    padding: 0 5px; /* Spacing between icons */
+}
+
+.main-nav ul.nav-social li a {
+    color: #333; /* Icon color */
+    font-size: 1.2rem; /* Icon size */
+}
+
+.main-nav ul.nav-social li a:hover {
+    color: blue; /* Icon hover color - matching nav-menu link hover */
+    border-bottom: none; /* Prevent underline on hover */
+}
+
 /*Header page*/
 .main-image{
     margin-top: 20px;
