@@ -381,6 +381,53 @@ ul{
     color: #ffffff;
 }
 
+/* Current Lineup Section */
+#current-lineup .section-title {
+  text-align: center;
+  font-size: 2.5rem; /* Or match other section titles */
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: #333; /* Or match other titles */
+}
+
+.lineup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
+  justify-items: center; /* Center items in their grid cells */
+}
+
+.player-card {
+  background-color: #f9f9f9; /* Light background for the card */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%; /* Ensure card takes full width of grid cell */
+  max-width: 200px; /* Optional: constrain max width of a card if minmax allows too much growth */
+}
+
+.player-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Circular images */
+  object-fit: cover; /* Cover the area, crop if necessary */
+  margin-bottom: 10px;
+  background-color: #ddd; /* Visible if image fails to load (placeholder) */
+  border: 2px solid #ccc; /* Border for the placeholder */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.player-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 5px;
+}
+
 /*Goleadores en resolución menor a 1075*/
 @media only screen and (max-width:1075px)
 {
