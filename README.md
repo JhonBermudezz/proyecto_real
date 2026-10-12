@@ -8,14 +8,16 @@ Tiktok: [@jhondev2022](https://www.tiktok.com/@jhondev2022) · GitHub: [JhonBerm
 
 ## Secciones
 
-- **Hero** con video en loop, tipografía gigante y tarjeta flotante del palmarés europeo
-- **Historia** y palmarés oficial (15 Copas de Europa, 36 Ligas, 20 Copas del Rey…)
-- **Frase de Juanito** que se ilumina palabra por palabra al hacer scroll
+- **Header clásico** al estilo de realmadrid.com: escudo, insignia de las 15 y menú
+- **Hero** con la remontada al Manchester City (2022) de fondo, en bucle del 2:15 al 2:50 con el reproductor oficial de YouTube
+- **Historia** con la camiseta oficial 2026/27
+- **Un palmarés de leyenda** con los iconos y datos oficiales del club
+- **Frase de Juanito** que se ilumina palabra por palabra, junto a las remontadas de 2022
 - **Máximos goleadores** en carrusel deslizable
-- **Bernabéu** con marco y título superpuesto
-- **Las 15 Copas de Europa**, de París 1956 a Wembley 2024, con línea de tiempo
-- **Fichajes 2026/27** y **plantilla completa** con datos de realmadrid.com
-- Navbar flotante con menú móvil a pantalla completa, página 404 propia y metadatos para redes
+- **Bernabéu** con fotos reales del estadio renovado
+- **Las 15 Copas de Europa**, de París 1956 a Wembley 2024, con línea de tiempo y marcador
+- **Fichajes 2026/27**, el canterano Thiago Pitarch y la **plantilla completa**
+- Página 404 propia y metadatos para redes
 
 ## Desarrollo
 
@@ -35,7 +37,6 @@ src/
   data/         goleadores, finales de Champions, fichajes y plantilla
   assets/       imágenes optimizadas (se importan con next/image)
 public/
-  video/        video del hero (mp4 + webm) y póster
   legacy/       versión 2022 sin cambios
 ```
 
@@ -45,6 +46,7 @@ El sitio se genera como **exportación estática** (`output: "export"`): `npm ru
 
 ## Créditos
 
-- Fotos de jugadores y datos de plantilla y palmarés: [realmadrid.com](https://www.realmadrid.com/es-ES)
-- Video del hero e imágenes ambientales (estadio, trofeo, grada, camiseta, balón) generados con IA a través de Kie
+- Fotos del estadio, de jugadores y de la Decimoquinta, iconos de trofeos, camiseta y datos: [realmadrid.com](https://www.realmadrid.com/es-ES)
+- Vídeo del hero: [GOAT 17 en YouTube](https://www.youtube.com/watch?v=1G4cIVAyN2U), incrustado con el reproductor oficial
+- Imagen de la página 404 generada con IA a través de Kie
 - Proyecto fan sin afiliación oficial con el Real Madrid CF

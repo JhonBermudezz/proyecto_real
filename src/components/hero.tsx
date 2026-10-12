@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react/ssr";
-import trofeo from "@/assets/kie/trophy.webp";
+import parche from "@/assets/club/parche-15.svg";
+import noche from "@/assets/real/bernabeu-noche-champions.webp";
+import { HeroVideo } from "./hero-video";
 import { Reveal } from "./reveal";
 
 const palabras = [
@@ -14,31 +16,21 @@ export function Hero() {
     <section
       id="inicio"
       aria-labelledby="hero-titulo"
-      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-navy-deep"
+      className="relative isolate flex min-h-[calc(100svh-4rem)] flex-col overflow-hidden bg-navy-deep"
     >
-      <video
-        className="absolute inset-0 -z-20 size-full object-cover motion-reduce:hidden"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/video/hero-poster.webp"
-        aria-hidden="true"
-      >
-        <source src="/video/hero.webm" type="video/webm" />
-        <source src="/video/hero.mp4" type="video/mp4" />
-      </video>
       <Image
-        src="/video/hero-poster.webp"
+        src={noche}
         alt=""
         fill
         priority
         sizes="100vw"
+        placeholder="blur"
         className="-z-30 object-cover"
       />
+      <HeroVideo />
       <div className="absolute inset-0 -z-10 bg-navy-deep/50" aria-hidden="true" />
 
-      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-between px-4 pt-32 pb-8 sm:px-6 lg:pt-40">
+      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-between px-4 pt-20 pb-8 sm:px-6 lg:pt-28">
         <h1 id="hero-titulo" className="grid gap-6 lg:grid-cols-3 lg:gap-4">
           {palabras.map((p, i) => (
             <Reveal as="span" key={p.texto} delay={i * 120} className="flex flex-col gap-3">
@@ -62,12 +54,9 @@ export function Hero() {
               href="#champions"
               className="group flex w-full max-w-80 items-center gap-4 rounded-3xl border border-white/15 bg-white/10 p-3 backdrop-blur-xl transition-all duration-700 ease-spring hover:-translate-y-1 hover:bg-white/15 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-gold"
             >
-              <Image
-                src={trofeo}
-                alt="Copa de Europa iluminada con confeti dorado"
-                className="h-24 w-20 rounded-xl object-cover"
-                sizes="80px"
-              />
+              <span className="grid h-24 w-20 shrink-0 place-items-center rounded-xl bg-white">
+                <Image src={parche} alt="" className="h-16 w-auto" />
+              </span>
               <div className="flex flex-col gap-1">
                 <span className="text-xs font-medium tracking-wide text-white/70 uppercase">
                   Palmarés europeo
@@ -83,9 +72,17 @@ export function Hero() {
 
           <Reveal delay={500} className="hidden lg:block">
             <p className="text-center text-sm text-white/70">
-              Temporada 2026/27
+              En pantalla: la remontada al Manchester City
               <br />
-              Entrenador: José Mourinho
+              Semifinal de 2022 ·{" "}
+              <a
+                href="https://www.youtube.com/watch?v=1G4cIVAyN2U&t=135s"
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-white/40 underline-offset-4 transition-colors duration-700 ease-spring hover:text-white"
+              >
+                vídeo de GOAT 17
+              </a>
             </p>
           </Reveal>
 

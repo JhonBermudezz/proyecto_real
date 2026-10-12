@@ -1,17 +1,8 @@
 import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react/ssr";
 import historiaImg from "@/assets/club/historia-real-img.webp";
-import camiseta from "@/assets/kie/jersey.webp";
+import camiseta from "@/assets/real/camiseta.webp";
 import { Reveal } from "./reveal";
-
-const palmares = [
-  { n: 15, t: "Copas de Europa" },
-  { n: 36, t: "Ligas" },
-  { n: 20, t: "Copas del Rey" },
-  { n: 9, t: "Mundiales de Clubes" },
-  { n: 6, t: "Supercopas de Europa" },
-  { n: 13, t: "Supercopas de España" },
-];
 
 export function Historia() {
   return (
@@ -79,33 +70,15 @@ export function Historia() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-8 -left-4 hidden w-48 rotate-3 overflow-hidden rounded-2xl border-4 border-white shadow-xl sm:block">
+            <div className="absolute -bottom-10 -left-4 hidden w-40 rotate-6 rounded-3xl bg-white p-4 shadow-xl shadow-navy/10 transition-transform duration-700 ease-spring hover:rotate-0 sm:block lg:w-48">
               <Image
                 src={camiseta}
-                alt="Detalle de la camiseta blanca con ribete dorado"
+                alt="Camiseta oficial del Real Madrid de la temporada 2026/27"
                 sizes="192px"
-                placeholder="blur"
-                className="aspect-square object-cover"
+                className="h-auto w-full"
               />
             </div>
           </Reveal>
-        </div>
-
-        <div className="flex flex-col gap-6">
-          <Reveal className="flex items-end justify-between gap-4 border-b border-navy/10 pb-4">
-            <h3 className="text-2xl font-semibold tracking-tight">Palmarés oficial</h3>
-            <span className="text-sm text-slate">Datos de realmadrid.com, octubre de 2026</span>
-          </Reveal>
-          <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {palmares.map((p, i) => (
-              <Reveal as="li" key={p.t} delay={i * 80}>
-                <div className="flex h-full flex-col gap-2 rounded-2xl bg-white p-6 transition-all duration-700 ease-spring hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/10">
-                  <span className="text-5xl font-semibold tracking-tighter text-navy">{p.n}</span>
-                  <span className="text-sm text-slate">{p.t}</span>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

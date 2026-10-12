@@ -2,6 +2,7 @@ import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { Marquee } from "@/components/marquee";
 import { Historia } from "@/components/historia";
+import { Palmares } from "@/components/palmares";
 import { Tagline } from "@/components/tagline";
 import { Goleadores } from "@/components/goleadores";
 import { Bernabeu } from "@/components/bernabeu";
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <Marquee />
         <Historia />
+        <Palmares />
         <Tagline />
         <Goleadores />
         <Bernabeu />

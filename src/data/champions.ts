@@ -13,7 +13,7 @@ import once from "@/assets/champions/once.webp";
 import doce from "@/assets/champions/doce.webp";
 import trece from "@/assets/champions/cetre.webp";
 import catorce from "@/assets/champions/catorce.webp";
-import trofeo from "@/assets/kie/trophy.webp";
+import decimoquinta from "@/assets/real/decimoquinta.webp";
 
 export type Final = {
   numero: number;
@@ -252,6 +252,6 @@ export const finales: Final[] = [
       "El Dortmund dominó la primera parte y Courtois volvió a ser decisivo. En la segunda, el Madrid se adueñó del partido.",
       "Carvajal cabeceó un córner de Kroos en el minuto 74 y Vinícius sentenció en el 83. Kroos se despidió del club como campeón de Europa.",
     ],
-    foto: trofeo,
+    foto: decimoquinta,
   },
 ];
