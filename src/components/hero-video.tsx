@@ -45,13 +45,36 @@ declare global {
 export function HeroVideo() {
   const contenedor = useRef<HTMLDivElement>(null);
   const player = useRef<Player | null>(null);
+  // listo: el vídeo llegó a reproducirse; visible: se muestra ahora mismo
   const [listo, setListo] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [sonido, setSonido] = useState(false);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let cancelado = false;
     let intervalo: number | undefined;
+    let espera: number | undefined;
+    let yaVisto = false;
+
+    // YouTube enseña el título al arrancar y un icono de play al pausar o cargar:
+    // el vídeo solo se muestra mientras se reproduce, y la primera vez con retraso.
+    const mostrar = () => {
+      window.clearTimeout(espera);
+      if (yaVisto) {
+        setVisible(true);
+        return;
+      }
+      espera = window.setTimeout(() => {
+        yaVisto = true;
+        setListo(true);
+        setVisible(true);
+      }, 3500);
+    };
+    const ocultar = (retraso: number) => {
+      window.clearTimeout(espera);
+      espera = window.setTimeout(() => setVisible(false), retraso);
+    };
 
     const crear = () => {
       if (cancelado || !contenedor.current || !window.YT) return;
@@ -80,15 +103,19 @@ export function HeroVideo() {
             e.target.mute();
             e.target.playVideo();
             intervalo = window.setInterval(() => {
-              if (e.target.getCurrentTime() >= FIN - 0.3) e.target.seekTo(INICIO, true);
+              if (e.target.getCurrentTime() >= FIN - 0.5) e.target.seekTo(INICIO, true);
             }, 400);
           },
           onStateChange: (e) => {
-            if (e.data === 1) setListo(true);
+            // 1 reproduciendo, 3 cargando, 2 en pausa, 0 terminado, -1/5 sin empezar
+            if (e.data === 1) mostrar();
+            else if (e.data === 3) ocultar(500);
+            else ocultar(0);
             if (e.data === 0) {
               e.target.seekTo(INICIO, true);
               e.target.playVideo();
             }
+            if (e.data === 2) e.target.playVideo();
           },
         },
       });
@@ -113,6 +140,7 @@ export function HeroVideo() {
     return () => {
       cancelado = true;
       window.clearInterval(intervalo);
+      window.clearTimeout(espera);
       player.current?.destroy();
       player.current = null;
     };
@@ -135,7 +163,7 @@ export function HeroVideo() {
       <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden" aria-hidden="true">
         <div
           ref={contenedor}
-          className={`absolute top-1/2 left-1/2 aspect-video w-[max(100%,calc((100svh-4rem)*16/9))] -translate-x-1/2 -translate-y-1/2 scale-110 transition-opacity duration-1000 ease-spring [&>iframe]:size-full ${listo ? "opacity-100" : "opacity-0"}`}
+          className={`absolute top-1/2 left-1/2 aspect-video w-[max(100%,calc((100svh-4rem)*16/9))] -translate-x-1/2 -translate-y-1/2 scale-[1.35] transition-opacity duration-700 ease-spring [&>iframe]:size-full ${visible ? "opacity-100" : "opacity-0"}`}
         />
       </div>
       {listo && (

@@ -7,11 +7,15 @@ const frases = [
   "Y nada más",
 ];
 
+// Cada mitad debe ser más ancha que cualquier pantalla para que el bucle no deje ver el final
+const REPETICIONES = 3;
+const tira = Array.from({ length: REPETICIONES }, () => frases).flat();
+
 export function Marquee() {
   const fila = (oculta: boolean) => (
-    <ul aria-hidden={oculta || undefined} className="flex shrink-0 items-center gap-8 pr-8">
-      {frases.map((f) => (
-        <li key={f} className="flex items-center gap-8">
+    <ul aria-hidden={oculta || undefined} className="flex shrink-0 items-center">
+      {tira.map((f, i) => (
+        <li key={i} aria-hidden={i >= frases.length || undefined} className="flex items-center gap-8 pr-8">
           <span className="text-2xl font-medium tracking-tight whitespace-nowrap text-white/40 uppercase">
             {f}
           </span>
