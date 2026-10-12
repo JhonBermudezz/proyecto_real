@@ -74,6 +74,17 @@ p {
   transform: translateY(0);
 }
 
+/* Barras del palmarés: crecen al aparecer la sección */
+.palmares-barra {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1200ms var(--ease-spring);
+}
+
+.reveal[data-visible="true"] .palmares-barra {
+  transform: scaleX(1);
+}
+
 /* Texto con degradado del hero (solo texto, nunca fondos) */
 .text-hero {
   background: linear-gradient(90deg, #ffffff, #9b9b9b);
@@ -109,5 +120,10 @@ p {
 
   .animate-marquee {
     animation: none;
+  }
+
+  .palmares-barra {
+    transform: none;
+    transition: none;
   }
 }

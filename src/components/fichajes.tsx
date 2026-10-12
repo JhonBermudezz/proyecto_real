@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Plant } from "@phosphor-icons/react/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/ssr";
 import { canterano, fichajes, type Fichaje } from "@/data/plantilla";
 import { Reveal } from "./reveal";
 
@@ -67,28 +67,45 @@ export function Fichajes() {
         </ul>
 
         <Reveal>
-          <a
-            href={canterano.perfil}
-            target="_blank"
-            rel="noreferrer"
-            className="group grid items-center gap-6 overflow-hidden rounded-3xl border border-gold/40 bg-navy-deep p-6 transition-all duration-700 ease-spring hover:border-gold active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold sm:grid-cols-[auto_1fr_auto]"
-          >
-            <div className="relative size-24 overflow-hidden rounded-2xl bg-royal-deep">
-              <Image src={canterano.foto} alt={`${canterano.nombre}, canterano del Real Madrid`} fill sizes="96px" className="object-cover object-top" />
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="flex items-center gap-2 text-sm font-semibold text-gold">
-                <Plant weight="duotone" className="size-4" /> Sube de La Fábrica
+          <article className="grid overflow-hidden rounded-3xl bg-navy-deep sm:grid-cols-[minmax(0,20rem)_1fr]">
+            <div className="relative h-80 bg-royal-deep sm:h-auto sm:min-h-80">
+              <span
+                className="absolute top-4 left-6 text-9xl font-bold tracking-tighter text-white/10"
+                aria-hidden="true"
+              >
+                {canterano.dorsal}
               </span>
-              <h3 className="text-2xl font-semibold tracking-tight">
-                {canterano.nombre} · dorsal {canterano.dorsal}
-              </h3>
-              <p className="text-sm text-white/70">
-                {canterano.posicion} nacido en {canterano.nacimiento}. Campeón de la Youth League con el Juvenil A.
-              </p>
+              <Image
+                src={canterano.foto}
+                alt={`${canterano.nombre} con la camiseta del Real Madrid`}
+                fill
+                sizes="320px"
+                className="object-contain object-bottom"
+              />
             </div>
-            <ArrowUpRight weight="bold" className="hidden size-6 text-gold transition-transform duration-700 ease-spring group-hover:translate-x-1 group-hover:-translate-y-1 sm:block" />
-          </a>
+            <div className="flex flex-col justify-center gap-4 p-6 sm:p-10">
+              <span className="w-max rounded-full bg-gold px-3 py-1 text-xs font-semibold tracking-wide text-navy uppercase">
+                Canterano · La Fábrica
+              </span>
+              <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">{canterano.nombre}</h3>
+              <p className="text-base text-white/70">
+                {canterano.posicion} · Dorsal {canterano.dorsal} · {canterano.nacimiento}
+              </p>
+              <p className="max-w-xl text-base text-white/70">
+                Formado en la cantera del Real Madrid, campeón de la Youth League con el Juvenil A y de
+                la Eurocopa sub 19. Sube al primer equipo para la temporada 2026/27.
+              </p>
+              <a
+                href={canterano.perfil}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex w-max items-center gap-2 rounded-full bg-gold px-3 py-2 text-base font-semibold text-navy transition-all duration-700 ease-spring hover:bg-gold-soft active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Ver ficha oficial
+                <ArrowUpRight weight="bold" className="size-4 transition-transform duration-700 ease-spring group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
+          </article>
         </Reveal>
       </div>
     </section>

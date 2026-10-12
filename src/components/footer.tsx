@@ -101,7 +101,7 @@ export function Footer() {
         <div className="flex flex-col justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row">
           <p>© 2026 Jhon Jairo Bermudez Sanchez</p>
           <p>
-            Fotos de jugadores: realmadrid.com · Imágenes ambientales y video generados con IA
+            Fotos e iconos: realmadrid.com · Vídeo del hero: GOAT 17 en YouTube
           </p>
         </div>
       </div>
