@@ -4,31 +4,16 @@ import historiaImg from "@/assets/club/historia-real-img.webp";
 import camiseta from "@/assets/real/camiseta.webp";
 import { Reveal } from "./reveal";
 
+const datos = [
+  { k: "1902", v: "Año de fundación" },
+  { k: "N.º 1", v: "Mejor club del siglo XX (FIFA)" },
+  { k: "1947", v: "Bernabéu, su casa" },
+];
+
 export function Historia() {
   return (
     <section id="historia" aria-labelledby="historia-titulo" className="bg-mist py-24 text-navy lg:py-32">
-      <div className="mx-auto flex max-w-7xl flex-col gap-16 px-4 sm:px-6">
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <Reveal>
-            <div className="flex size-40 flex-col items-center justify-center rounded-full bg-white text-center shadow-xl shadow-navy/5">
-              <span className="text-4xl font-semibold tracking-tighter">1902</span>
-              <span className="max-w-24 text-xs text-slate">Año de fundación del club</span>
-            </div>
-          </Reveal>
-          <Reveal delay={150}>
-            <div className="flex max-w-md gap-6 rounded-3xl bg-white p-6 shadow-xl shadow-navy/5">
-              <span className="text-4xl font-semibold tracking-tighter">#01</span>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold">Mejor club del siglo XX</h3>
-                <p className="text-sm text-slate">
-                  Trofeo concedido por la FIFA el 11 de diciembre del año 2000, votado por
-                  aficionados de todo el mundo.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal className="flex flex-col gap-6">
             <span className="text-sm font-semibold tracking-wide text-royal uppercase">Historia</span>
@@ -45,6 +30,14 @@ export function Historia() {
               Sus éxitos, celebrados en la fuente de La Cibeles, han forjado la historia de un club
               acostumbrado a ganar y con un palmarés que nadie ha igualado en Europa.
             </p>
+            <dl className="grid grid-cols-3 divide-x divide-navy/10 rounded-2xl bg-white py-4">
+              {datos.map((d) => (
+                <div key={d.k} className="flex flex-col gap-1 px-4">
+                  <dt className="order-2 text-xs text-slate">{d.v}</dt>
+                  <dd className="text-2xl font-semibold tracking-tight text-navy">{d.k}</dd>
+                </div>
+              ))}
+            </dl>
             <a
               href="https://www.realmadrid.com/es-ES/el-club/historia"
               target="_blank"
