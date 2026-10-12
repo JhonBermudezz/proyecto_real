@@ -41,7 +41,7 @@ public/
 
 ## Despliegue en Netlify
 
-`netlify.toml` ya define `npm run build` y publica `.next`; Netlify detecta Next.js y aplica su runtime automáticamente. Si el sitio estaba configurado como estático, quita el "publish directory" de la configuración del panel para que mande el archivo.
+`netlify.toml` define el build (`npm run build`), la carpeta `.next` y Node 22. La configuración del archivo tiene prioridad sobre la del panel, y Netlify detecta Next.js y aplica su runtime automáticamente, así que el mismo sitio pasa a servir esta versión al hacer merge.
 
 ## Créditos
 
