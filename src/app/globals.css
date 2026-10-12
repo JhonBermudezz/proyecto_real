@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* Paleta tomada de realmadrid.com */
+@theme {
+  --color-navy: #0f2145;
+  --color-navy-deep: #0a1730;
+  --color-royal: #3e31fa;
+  --color-royal-deep: #2115ab;
+  --color-violet: #8760f6;
+  --color-gold: #f2be4e;
+  --color-gold-deep: #eaac30;
+  --color-gold-soft: #ffdf9a;
+  --color-mist: #f3f5f8;
+  --color-cloud: #e7e7e7;
+  --color-slate: #788398;
+  --color-silver: #c7ccd6;
+
+  --font-sans: var(--font-geist-sans);
+
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--color-navy-deep);
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* Aparición al hacer scroll (ver components/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(4rem);
+  transition:
+    opacity 900ms var(--ease-spring),
+    filter 900ms var(--ease-spring),
+    transform 900ms var(--ease-spring);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Texto con degradado del hero (solo texto, nunca fondos) */
+.text-hero {
+  background: linear-gradient(90deg, #ffffff, #9b9b9b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1.5px currentColor;
+  color: transparent;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-marquee {
+    animation: none;
+  }
+}
