@@ -22,7 +22,7 @@ Tiktok: [@jhondev2022](https://www.tiktok.com/@jhondev2022) · GitHub: [JhonBerm
 ```bash
 npm install
 npm run dev     # http://localhost:3000
-npm run build   # build de producción
+npm run build   # exportación estática en out/
 npm run lint
 ```
 
@@ -41,7 +41,7 @@ public/
 
 ## Despliegue en Netlify
 
-`netlify.toml` define el build (`npm run build`), la carpeta `.next` y Node 22. La configuración del archivo tiene prioridad sobre la del panel, y Netlify detecta Next.js y aplica su runtime automáticamente, así que el mismo sitio pasa a servir esta versión al hacer merge.
+El sitio se genera como **exportación estática** (`output: "export"`): `npm run build` deja HTML, CSS, JS e imágenes en `out/`, sin necesidad de servidor. `netlify.toml` le indica a Netlify ese comando, la carpeta `out` y Node 22. La configuración del archivo tiene prioridad sobre la del panel.
 
 ## Créditos
 
